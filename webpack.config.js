@@ -1,4 +1,5 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: path.resolve(__dirname, "src/index.js"),
@@ -10,4 +11,11 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "webpack app",
+      filename: "index.html",
+      template: "src/template.html",
+    }),
+  ],
 };
